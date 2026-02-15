@@ -1,0 +1,2170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FUJIFILM - Uniquely Crafted Cameras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "fuji-red": "#c8102e",
+              "fuji-red-light": "#e63950",
+              "fuji-gold": "#b8942e",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-14px);
+        }
+      }
+      @keyframes float2 {
+        0%,
+        100% {
+          transform: translateY(0);
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateY(-80px) translateX(100px);
+        }
+      }
+
+      @keyframes scanline {
+        0% {
+          left: -400px;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+@keyframes marquee-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes marquee-right {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+ .hero-overlay {
+      background: #0404049e;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      will-change: transform;
+    }
+    .marquee-track--left  { animation: marquee-left  28s linear infinite; }
+    .marquee-track--right { animation: marquee-right 28s linear infinite; }
+
+   
+    .marquee-track--left:hover,
+    .marquee-track--right:hover { animation-play-state: paused; }
+.card-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    .card-shine::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    .card-shine:hover::after { opacity: 1; }
+    .card-shine:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+    .card-shine { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    
+    .marquee-fade {
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+      );
+    }
+      .float-animation {
+        animation: float 4s ease-in-out infinite;
+      }
+      .float-animation2 {
+        animation: float2 4s ease-in-out infinite;
+      }
+
+      .scanline::before,
+      .scanline::after {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(200, 16, 46, 0.4),
+          transparent
+        );
+        animation: scanline 3s linear infinite;
+      }
+
+      .scanline::before {
+        top: 40%;
+      }
+      .scanline::after {
+        top: 60%;
+        animation-delay: 1.5s;
+      }
+
+      .slick-prev,
+      .slick-next {
+        z-index: 10;
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        opacity: 1;
+        color: white;
+      }
+
+      .hero-slider .slick-dots li {
+        width: 5px;
+        height: 5px;
+      }
+      .hero-slider button.slick-prev.slick-arrow::before{
+        content: url('public/arrow-prev.png');
+      }
+      .hero-slider button.slick-next.slick-arrow::before{
+        content: url('public/arrow-next.png');
+        
+      }
+      .products-slider .slick-arrow {
+    top: -60px;
+    
+    /* background: red; */
+   
+}
+.products-slider button.slick-prev.slick-arrow{
+    left: 90%;
+}
+.products-slider button.slick-next.slick-arrow{
+   left: 95%;
+}
+
+  .products-slider button.slick-prev.slick-arrow::before{
+        content: url('public/prevbutton.png');
+        /* rotate:40deg; */
+     
+      }
+        .products-slider button.slick-next.slick-arrow::before{
+        content: url('public/ButtonNext.png');
+      
+        
+      }
+      .hero-slider.slick-dotted.slick-slider {
+        margin-bottom: 0 !important;
+      }
+      .hero-slider .slick-arrow {
+        position: absolute;
+        top: 87%;
+        
+        opacity: 1;
+      }
+
+      .hero-slider button.slick-next.slick-arrow {
+        left: 88%;
+      }
+
+      .hero-slider button.slick-prev.slick-arrow {
+        left: 9%;
+      }
+      .hero-slider .slick-dots {
+        bottom: 61px;
+        right: 48.2%;
+        width: fit-content;
+        opacity: 1;
+      }
+
+      
+
+.hero-slider .slick-dots li button:before {
+      border: 5px solid #fff !important;
+     /* background:  #fff !important; */
+     border-radius:100px !important;
+    height:10px;
+    width:10px;
+    color: #ffffff00 !important;
+}
+
+.hero-slider .slick-dots li.slick-active button:before{
+     border: 2px solid #fff !important;
+     border-radius:100px !important;
+    height:10px;
+    width:10px;
+    color: #38383800 !important;
+}
+
+      .nav-link {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.4s ease;
+      }
+      .hover-link {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: color 0.4s ease;
+      }
+
+      .hover-link::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: black;
+        border-radius: 100px;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: -1;
+      }
+      .hover-link:hover {
+        color: white;
+      }
+      .hover-link:hover::before {
+        transform: scaleY(1);
+        transform-origin: bottom;
+      }
+      .hover-link:not(:hover)::before {
+        transform-origin: top;
+      }
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: white;
+        border-radius: 100px;
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: -1;
+      }
+
+      .nav-link:hover {
+        color: black;
+      }
+
+      .nav-link:hover::before {
+        transform: scaleY(1);
+        transform-origin: bottom;
+      }
+
+      .nav-link:not(:hover)::before {
+        transform-origin: top;
+      }
+
+      .transition-smooth {
+        transition: all 0.3s ease;
+      }
+      .page-width {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+      @media (max-width:767px){
+        .page-width{
+          padding:0 20px;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-white text-black overflow-x-hidden">
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 bg-black backdrop-blur-xl border-b border-red-700"
+    >
+      <div
+        class="max-w-[1600px] mx-auto px-10 py-5 flex items-center justify-between"
+      >
+      <div class="flex lg:hidden relative">
+       <div class="drawerbtn cursor-pointer" onclick="toggleDrawer()"><svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="5" y1="7" x2="19" y2="7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="5" y1="12" x2="19" y2="12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="5" y1="17" x2="19" y2="17" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> </div> 
+ <ul id="mobileMenu" class="flex gap-0 min-[1100px]:gap-8 list-none fixed h-[100vh] top-full left-0 right-0 bg-black gap-4 px-4 flex-col items-start py-4 hidden">
+          <li>
+            <a
+              href="#"
+              class=" nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >Cameras</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >Lenses</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >Accessories</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >Film</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >Stories</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >X Academy</a
+            >
+          </li>
+        </ul>
+      </div>
+        <div class="font-black text-2xl tracking-[6px] text-white uppercase">
+          <img
+            src="public/Fuji_X-_GFX-white-logo 1.png"
+            alt="FUJIFILM"
+            class="w-[110px]"
+          />
+        </div>
+
+        <ul class="flex gap-0 min-[1100px]:gap-8 list-none hidden lg:flex">
+          <li>
+            <a
+              href="#"
+              class=" nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >Cameras</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >Lenses</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >Accessories</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >Film</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >Stories</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-link text-white text-sm font-semibold tracking-[2px] uppercase px-3 min-[1100px]:px-6 py-2.5 rounded-full"
+              >X Academy</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-2">
+          <img
+            class="w-10 h-10 cursor-pointer"
+            src="public/header_icon1.svg"
+            alt="Account"
+          />
+          <img
+            class="w-10 h-10 cursor-pointer"
+            src="public/header_icon2.svg"
+            alt="Search"
+          />
+          <img
+            class="w-7 h-7 ml-2 cursor-pointer"
+            src="public/header_icon3.svg"
+            alt="Cart"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <div class="h-20"></div>
+
+    <!-- Hero Slider -->
+   <section class="hero-slider relative page-width mt-6">
+  <!-- Slide 1 -->
+  <div class="relative rounded-[18px] overflow-hidden bg-black">
+    <img src="public/animate-element-1.png" alt="Hero" class="w-full h-[300px] sm:h-[400px] lg:h-auto object-cover" />
+    <div class="absolute top-1/2 left-6 sm:left-10 lg:left-20 -translate-y-1/2 px-4">
+      <p class="text-2xl sm:text-4xl lg:text-[56px] font-bold text-white uppercase text-left leading-[1.1] lg:leading-[50px]">
+        UNIQUELY CRAFTED<br />
+        CAMERAS ONLY<br />
+        FOR THE BEST
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="relative rounded-[18px] overflow-hidden bg-black">
+    <img src="public/animate-element-2.png" alt="Hero" class="w-full h-[300px] sm:h-[400px] lg:h-auto object-cover" />
+    <div class="absolute top-1/2 left-6 sm:left-10 lg:left-20 -translate-y-1/2 px-4">
+      <p class="text-2xl sm:text-4xl lg:text-[56px] font-bold text-white uppercase text-left leading-[1.1] lg:leading-[50px] ">
+        UNIQUELY CRAFTED<br />
+        CAMERAS ONLY<br />
+        FOR THE BEST
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="relative rounded-[18px] overflow-hidden bg-black">
+    <img src="public/animate-element-3.png" alt="Hero" class="w-full h-[300px] sm:h-[400px] lg:h-auto object-cover" />
+    <div class="absolute top-1/2 left-6 sm:left-10 lg:left-20 -translate-y-1/2 px-4">
+      <p class="text-2xl sm:text-4xl lg:text-[56px] font-bold text-white uppercase text-left leading-[1.1] lg:leading-[50px]">
+        UNIQUELY CRAFTED<br />
+        CAMERAS ONLY<br />
+        FOR THE BEST
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Vision Section -->
+   <section
+  class="page-width pt-10 md:pt-[74px] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start "
+>
+  <!-- Left Content -->
+  <div>
+    <h2
+      class="font-bold text-black text-2xl sm:text-3xl md:text-[42px] lg:text-[50px] uppercase tracking-wide leading-snug md:leading-tight"
+    >
+      We believe in vision through every
+      <span
+        class="relative inline-block before:block before:w-full before:h-[6px] sm:before:h-[8px] before:bg-[url('public/text-vector.png')] before:bg-no-repeat before:bg-contain before:absolute before:-bottom-2 sm:before:-bottom-3 before:left-0"
+      >
+        shot
+      </span>
+    </h2>
+
+    <a
+      href="#"
+      class="hover-link rounded-full inline-flex items-center gap-2 px-6 sm:px-7 py-3 mt-6 sm:mt-8 bg-transparent border-2 border-black text-black text-[10px] sm:text-xs font-semibold tracking-[2px] sm:tracking-[3px] uppercase hover:bg-black hover:text-white transition-all duration-300"
+    >
+      Our Story
+      <svg
+        width="11"
+        height="12"
+        viewBox="0 0 11 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="group-hover:fill-white"
+          d="M8.37031 6.75L4.52031 10.95L5.5 12L11 6L5.5 0L4.52031 1.05L8.37031 5.25H0V6.75H8.37031Z"
+          fill="black"
+        />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Right Content -->
+  <div class="text-base sm:text-lg md:text-[18px] leading-relaxed text-gray-700">
+    <p>
+      Backed by the legendary color science, Fujifilm X Series and GFX
+      cameras deliver the truest, most vibrant colors straight out of the
+      camera. From our iconic Film Simulations to revolutionary sensors,
+      experience the heritage of superior color in every digital
+      frame you capture.
+    </p>
+  </div>
+</section>
+
+
+    <!-- New Launch --><section class="relative md:h-[200vh]">
+    <div class="md:sticky top-0 bg-black mt-[74px] py-10 md:py-24 px-10 text-center">
+      <div class="relative">
+        <div
+          class="absolute left-1/2 -translate-x-1/2 -translate-y-1/3 min-w-[1024px]:w-[966px] h-full min-w-[1024px]:h-[520px] -z-10"
+        >
+          <img
+            src="public/glassy-effect.png"
+            alt="New Launch"
+            class="float-animation2 w-full h-full"
+          />
+        </div>
+
+        <p
+          class="relative z-10 text-white text-[30px] px-4 w-fit mx-auto tracking-[5px] uppercase mb-10 font-bold"
+          style="
+            background: rgb(255 255 255 / 5%);
+            border-radius: 6px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(0.7px);
+            border: 1px solid rgba(255, 255, 255, 0.62);
+          "
+        >
+          New Launches
+        </p>
+        <div class="relative flex justify-center mb-10">
+          <img class="max-w-[652px] w-full" src="public/animated_text.png" />
+        </div>
+      </div>
+    </div>
+    <div
+      class="md:sticky top-0 bg-black flex flex-col items-center justify-center gap-10 pb-24 px-10 text-center"
+    >
+      <div class="relative z-10 max-w-[70%] mx-auto  mb-10">
+        <img
+          src="public/fuji_on.png"
+          alt="X·half"
+          class="w-full float-animation sticky top-0 drop-shadow-2xl"
+        />
+        <!-- <div
+          class="absolute top-5 left-1/2 -translate-x-1/2 w-72 h-10 bg-[radial-gradient(ellipse,rgba(200,16,46,0.4)_0%,transparent_70%)] blur-lg"
+        ></div> -->
+      </div>
+
+      <a
+        href="#"
+        class="relative rounded-full z-10 inline-flex items-center gap-2 px-7 py-3 border bg-white text-black text-xs font-semibold group tracking-[3px] bg-white-700 uppercase hover:bg-black hover:text-white transition-all"
+      >
+        Check This Out
+        <svg
+          width="11"
+          height="12"
+          viewBox="0 0 11 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="group-hover:fill-white"
+            d="M8.37031 6.75L4.52031 10.95L5.5 12L11 6L5.5 0L4.52031 1.05L8.37031 5.25H0V6.75H8.37031Z"
+            fill="black"
+          />
+        </svg>
+      </a>
+      <div
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full min-w-[1024px]:w-[966px] h-full min-w-[1024px]:h-[520px] -z-10"
+      >
+        <img
+          src="public/glassy-effect.png"
+          alt="New Launch"
+          class="w-full h-full"
+        />
+      </div>
+    </div></section>
+
+    <!-- Categories -->
+    <section class="py-10 md:py-20 bg-white rounded-t-[30px] md:mt-[-28px]">
+      <div class="grid grid-cols-1 min-[600px]:grid-cols-2 md:grid-cols-4 gap-10 page-width">
+        <div class="slide-container w-full">
+          <div
+            class="relative cursor-pointer overflow-hidden rounded-2xl aspect-[4/5] bg-gray-100 group bg-cover bg-center hover:shadow-md"
+            style="background-image: url(public/prd_3.jpg)"
+          >
+            <div class="absolute bottom-0 left-0 right-0 p-[30px]">
+              <div class="flex justify-between items-center">
+                <div>
+                  <div class="text-black font-bold text-[28px]">Camera</div>
+                  <div class="font-bold text-black text-[12px]">
+                    Check out all our products
+                  </div>
+                </div>
+                <svg
+                  width="11"
+                  height="12"
+                  viewBox="0 0 11 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class=""
+                    d="M8.37031 6.75L4.52031 10.95L5.5 12L11 6L5.5 0L4.52031 1.05L8.37031 5.25H0V6.75H8.37031Z"
+                    fill="black"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-container w-full">
+          <div
+            class="relative cursor-pointer overflow-hidden rounded-2xl aspect-[4/5] bg-gray-100 group bg-cover bg-center hover:shadow-md"
+            style="background-image: url(public/prd_4.jpg)"
+          >
+            <div class="absolute bottom-0 left-0 right-0 p-[30px]">
+              <div class="flex justify-between items-center">
+                <div>
+                  <div class="text-black font-bold text-[28px]">Lenses</div>
+                  <div class="font-bold text-black text-[12px]">
+                    Check out all our products
+                  </div>
+                </div>
+                <svg
+                  width="11"
+                  height="12"
+                  viewBox="0 0 11 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class=""
+                    d="M8.37031 6.75L4.52031 10.95L5.5 12L11 6L5.5 0L4.52031 1.05L8.37031 5.25H0V6.75H8.37031Z"
+                    fill="black"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-container w-full">
+          <div
+            class="relative cursor-pointer overflow-hidden rounded-2xl aspect-[4/5] bg-gray-100 group bg-cover bg-center hover:shadow-md"
+            style="background-image: url(public/prd_2.jpg)"
+          >
+            <div class="absolute bottom-0 left-0 right-0 p-[30px]">
+              <div class="flex justify-between items-center">
+                <div>
+                  <div class="text-black font-bold text-[28px]">
+                    Accessories
+                  </div>
+                  <div class="font-bold text-black text-[12px]">
+                    Check out all our products
+                  </div>
+                </div>
+                <svg
+                  width="11"
+                  height="12"
+                  viewBox="0 0 11 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class=""
+                    d="M8.37031 6.75L4.52031 10.95L5.5 12L11 6L5.5 0L4.52031 1.05L8.37031 5.25H0V6.75H8.37031Z"
+                    fill="black"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-container w-full">
+          <div
+            class="relative cursor-pointer overflow-hidden rounded-2xl aspect-[4/5] bg-gray-100 group bg-cover bg-center hover:shadow-md"
+            style="background-image: url(public/prd_1.jpg)"
+          >
+            <div class="absolute bottom-0 left-0 right-0 p-[30px]">
+              <div class="flex justify-between items-center">
+                <div>
+                  <div class="text-black font-bold text-[28px]">
+                    Binoculars 
+                  </div>
+                  <div class="font-bold text-black text-[12px]">
+                    Check out all our products
+                  </div>
+                </div>
+                <svg
+                  width="11"
+                  height="12"
+                  viewBox="0 0 11 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class=""
+                    d="M8.37031 6.75L4.52031 10.95L5.5 12L11 6L5.5 0L4.52031 1.05L8.37031 5.25H0V6.75H8.37031Z"
+                    fill="black"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Build Your Persona Banner -->
+    <section
+  style="background-image: url('public/persona.gif');"
+  class="relative rounded-t-[30px] overflow-hidden flex items-center justify-center text-center 
+         bg-cover bg-no-repeat bg-center
+         h-[500px] sm:h-[650px] md:h-[800px] lg:h-[971px]"
+>
+  <div class="relative z-10 px-4">
+    
+    <h2 class="text-white font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-2">
+      Build Your Persona
+    </h2>
+
+    <p class="text-white text-lg sm:text-xl md:text-2xl lg:text-[30px] mb-6">
+      Discover Products Made for You
+    </p>
+
+    <a
+      href="#"
+      class="relative rounded-full z-10 inline-flex items-center gap-2 
+             px-6 sm:px-7 py-3 
+             bg-white border text-black text-[11px] sm:text-xs 
+             font-semibold tracking-[3px] uppercase
+             hover:bg-black hover:text-white transition-all"
+    >
+      Start Your Journey
+      <svg
+        width="11"
+        height="12"
+        viewBox="0 0 11 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="group-hover:fill-white"
+          d="M8.37031 6.75L4.52031 10.95L5.5 12L11 6L5.5 0L4.52031 1.05L8.37031 5.25H0V6.75H8.37031Z"
+          fill="black"
+        />
+      </svg>
+    </a>
+
+  </div>
+</section>
+
+    <section class="py-10 md:py-20 bg-white">
+      <!-- Best Sellers -->
+      <div
+        class="pt-8 md:pt-16 pb-8 flex flex-col items-start justify-between page-width"
+      >
+        <h2 class="font-bold text-3xl  md:text-[56px] uppercase tracking-[2px]">
+          Best Sellers
+        </h2>
+         <div class="flex gap-3 md:gap-5 mt-6 md:mt-8 overflow-x-auto no-scrollbar w-full">
+      
+      <button class="whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-medium tracking-[2px] bg-black text-white">
+        Camera
+      </button>
+
+      <button class="whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-medium tracking-[2px] bg-[#17171706] text-black hover:bg-black hover:text-white transition-all">
+        Lenses
+      </button>
+
+      <button class="whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-medium tracking-[2px] bg-[#17171706] text-black hover:bg-black hover:text-white transition-all">
+        Binoculars
+      </button>
+
+      <button class="whitespace-nowrap px-5 py-2.5 rounded-full text-xs font-medium tracking-[2px] bg-[#17171706] text-black hover:bg-black hover:text-white transition-all">
+        Accessories
+      </button>
+
+    </div>
+      </div>
+
+      <div class="page-width">
+        <div class="products-slider">
+        <div class="card-enter relative flex-shrink-0 w-72 bg-[#FAFAFA] rounded-2xl p-5 flex flex-col hover:-translate-y-1 transition-transform duration-200  mx-4" >
+            <div class="absolute right-5 top-5 flex justify-end items-center gap-1 mb-2 bg-white rounded-full px-2 py-1">
+              <span class="text-amber-400 text-base leading-none">★</span
+              ><span class="text-xs font-semibold text-gray-700">5.0</span>
+            </div>
+            <div
+              class="w-full  flex items-center justify-center mb-0 overflow-hidden"
+            >
+              <img
+                alt="X-S20"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                src="public/product_image.png"
+              />
+            </div>
+            <p
+              class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1"
+            >
+              CAMERA
+            </p>
+            <h3
+              class="text-2xl md:text-[38px] font-extrabold text-gray-900 tracking-tight mb-2"
+            >
+              X-S20
+            </h3>
+            <span
+              class="self-start bg-green-500 text-white text-[14px] font-bold px-2 py-1 rounded mb-2 w-fit block"
+              >Save ₹38,999</span
+            >
+            <div class="flex items-baseline gap-2 mb-4 border-b border-gray-200 pb-0">
+              <span class="text-[27px] font-extrabold text-black">₹5,11,000</span
+              ><span class="relative text-[18px] text-[#81818199]
+                before:content-['']
+                before:absolute
+                before:left-0
+                before:top-1/2
+                before:w-full
+                before:h-[2px]
+                before:bg-[#FF0000]
+                before:-rotate-[6deg]
+                before:origin-center">
+                ₹5,49,999
+              </span>
+
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-sm text-black font-medium"
+                >Color: <strong class="text-black font-semibold">Black</strong></span
+              ><button
+                class="text-xs font-bold tracking-widest text-[#17171799] uppercase hover:text-gray-900 transition-colors"
+              >
+                COMPARE
+              </button>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex gap-1.5">
+                <button
+                  title="Black"
+                  class="w-8 h-8 rounded-md border-2 transition-all duration-150 border-gray-900 scale-110"
+                  style="background-color: rgb(26, 26, 26)"
+                >
+                <img src="public/prd_thumb1.png" />
+                </button
+                ><button
+                  title="Silver"
+                  class="w-8 h-8 rounded-md border-2 transition-all duration-150 border-transparent hover:border-gray-400"
+                  style="background-color: rgb(200, 200, 200)"
+                >
+                <img src="public/prd_thumb.png" />
+              </button>
+              </div>
+              <button
+                class="btn-add hover-link bg-black flex items-center gap-1.5 text-white text-xs font-semibold px-4 py-2 rounded-full"
+              >
+               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.46851 5.92467H5.92442M5.92442 5.92467H9.38034M5.92442 5.92467V2.46875M5.92442 5.92467V9.38058" stroke="white" stroke-width="1.48111" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                  Add
+              </button>
+            </div>
+            <button
+              class="hover-link bg-black w-full text-white text-sm font-semibold py-3.5 rounded-full"
+            >
+              Check This Out
+            </button>
+          </div>
+              <div class="card-enter relative flex-shrink-0 w-72 bg-[#FAFAFA] rounded-2xl p-5 flex flex-col hover:-translate-y-1 transition-transform duration-200  mx-4" >
+            <div class="absolute right-5 top-5 flex justify-end items-center gap-1 mb-2 bg-white rounded-full px-2 py-1">
+              <span class="text-amber-400 text-base leading-none">★</span
+              ><span class="text-xs font-semibold text-gray-700">5.0</span>
+            </div>
+            <div
+              class="w-full  flex items-center justify-center mb-0 overflow-hidden"
+            >
+              <img
+                alt="X-S20"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                src="public/product_image.png"
+              />
+            </div>
+            <p
+              class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1"
+            >
+              CAMERA
+            </p>
+            <h3
+              class="text-2xl md:text-[38px] font-extrabold text-gray-900 tracking-tight mb-2"
+            >
+              X-S20
+            </h3>
+            <span
+              class="self-start bg-green-500 text-white text-[14px] font-bold px-2 py-1 rounded mb-2 w-fit block"
+              >Save ₹38,999</span
+            >
+            <div class="flex items-baseline gap-2 mb-4 border-b border-gray-200 pb-0">
+              <span class="text-[27px] font-extrabold text-black">₹5,11,000</span
+              ><span class="relative text-[18px] text-[#81818199]
+                before:content-['']
+                before:absolute
+                before:left-0
+                before:top-1/2
+                before:w-full
+                before:h-[2px]
+                before:bg-[#FF0000]
+                before:-rotate-[6deg]
+                before:origin-center">
+                ₹5,49,999
+              </span>
+
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-sm text-black font-medium"
+                >Color: <strong class="text-black font-semibold">Black</strong></span
+              ><button
+                class="text-xs font-bold tracking-widest text-[#17171799] uppercase hover:text-gray-900 transition-colors"
+              >
+                COMPARE
+              </button>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex gap-1.5">
+                <button
+                  title="Black"
+                  class="w-8 h-8 rounded-md border-2 transition-all duration-150 border-gray-900 scale-110"
+                  style="background-color: rgb(26, 26, 26)"
+                >
+                <img src="public/prd_thumb1.png" />
+                </button
+                ><button
+                  title="Silver"
+                  class="w-8 h-8 rounded-md border-2 transition-all duration-150 border-transparent hover:border-gray-400"
+                  style="background-color: rgb(200, 200, 200)"
+                >
+                <img src="public/prd_thumb.png" />
+              </button>
+              </div>
+              <button
+                class="btn-add hover-link bg-black flex items-center gap-1.5 text-white text-xs font-semibold px-4 py-2 rounded-full"
+              >
+               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.46851 5.92467H5.92442M5.92442 5.92467H9.38034M5.92442 5.92467V2.46875M5.92442 5.92467V9.38058" stroke="white" stroke-width="1.48111" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                  Add
+              </button>
+            </div>
+            <button
+              class="hover-link bg-black w-full text-white text-sm font-semibold py-3.5 rounded-full"
+            >
+              Check This Out
+            </button>
+          </div>
+              <div class="card-enter relative flex-shrink-0 w-72 bg-[#FAFAFA] rounded-2xl p-5 flex flex-col hover:-translate-y-1 transition-transform duration-200  mx-4" >
+            <div class="absolute right-5 top-5 flex justify-end items-center gap-1 mb-2 bg-white rounded-full px-2 py-1">
+              <span class="text-amber-400 text-base leading-none">★</span
+              ><span class="text-xs font-semibold text-gray-700">5.0</span>
+            </div>
+            <div
+              class="w-full  flex items-center justify-center mb-0 overflow-hidden"
+            >
+              <img
+                alt="X-S20"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                src="public/product_image.png"
+              />
+            </div>
+            <p
+              class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1"
+            >
+              CAMERA
+            </p>
+            <h3
+              class="text-2xl md:text-[38px] font-extrabold text-gray-900 tracking-tight mb-2"
+            >
+              X-S20
+            </h3>
+            <span
+              class="self-start bg-green-500 text-white text-[14px] font-bold px-2 py-1 rounded mb-2 w-fit block"
+              >Save ₹38,999</span
+            >
+            <div class="flex items-baseline gap-2 mb-4 border-b border-gray-200 pb-0">
+              <span class="text-[27px] font-extrabold text-black">₹5,11,000</span
+              ><span class="relative text-[18px] text-[#81818199]
+                before:content-['']
+                before:absolute
+                before:left-0
+                before:top-1/2
+                before:w-full
+                before:h-[2px]
+                before:bg-[#FF0000]
+                before:-rotate-[6deg]
+                before:origin-center">
+                ₹5,49,999
+              </span>
+
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-sm text-black font-medium"
+                >Color: <strong class="text-black font-semibold">Black</strong></span
+              ><button
+                class="text-xs font-bold tracking-widest text-[#17171799] uppercase hover:text-gray-900 transition-colors"
+              >
+                COMPARE
+              </button>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex gap-1.5">
+                <button
+                  title="Black"
+                  class="w-8 h-8 rounded-md border-2 transition-all duration-150 border-gray-900 scale-110"
+                  style="background-color: rgb(26, 26, 26)"
+                >
+                <img src="public/prd_thumb1.png" />
+                </button
+                ><button
+                  title="Silver"
+                  class="w-8 h-8 rounded-md border-2 transition-all duration-150 border-transparent hover:border-gray-400"
+                  style="background-color: rgb(200, 200, 200)"
+                >
+                <img src="public/prd_thumb.png" />
+              </button>
+              </div>
+              <button
+                class="btn-add hover-link bg-black flex items-center gap-1.5 text-white text-xs font-semibold px-4 py-2 rounded-full"
+              >
+               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.46851 5.92467H5.92442M5.92442 5.92467H9.38034M5.92442 5.92467V2.46875M5.92442 5.92467V9.38058" stroke="white" stroke-width="1.48111" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                  Add
+              </button>
+            </div>
+            <button
+              class="hover-link bg-black w-full text-white text-sm font-semibold py-3.5 rounded-full"
+            >
+              Check This Out
+            </button>
+          </div>
+              <div class="card-enter relative flex-shrink-0 w-72 bg-[#FAFAFA] rounded-2xl p-5 flex flex-col hover:-translate-y-1 transition-transform duration-200  mx-4" >
+            <div class="absolute right-5 top-5 flex justify-end items-center gap-1 mb-2 bg-white rounded-full px-2 py-1">
+              <span class="text-amber-400 text-base leading-none">★</span
+              ><span class="text-xs font-semibold text-gray-700">5.0</span>
+            </div>
+            <div
+              class="w-full  flex items-center justify-center mb-0 overflow-hidden"
+            >
+              <img
+                alt="X-S20"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                src="public/product_image.png"
+              />
+            </div>
+            <p
+              class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1"
+            >
+              CAMERA
+            </p>
+            <h3
+              class="text-2xl md:text-[38px] font-extrabold text-gray-900 tracking-tight mb-2"
+            >
+              X-S20
+            </h3>
+            <span
+              class="self-start bg-green-500 text-white text-[14px] font-bold px-2 py-1 rounded mb-2 w-fit block"
+              >Save ₹38,999</span
+            >
+            <div class="flex items-baseline gap-2 mb-4 border-b border-gray-200 pb-0">
+              <span class="text-[27px] font-extrabold text-black">₹5,11,000</span
+              ><span class="relative text-[18px] text-[#81818199]
+                before:content-['']
+                before:absolute
+                before:left-0
+                before:top-1/2
+                before:w-full
+                before:h-[2px]
+                before:bg-[#FF0000]
+                before:-rotate-[6deg]
+                before:origin-center">
+                ₹5,49,999
+              </span>
+
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-sm text-black font-medium"
+                >Color: <strong class="text-black font-semibold">Black</strong></span
+              ><button
+                class="text-xs font-bold tracking-widest text-[#17171799] uppercase hover:text-gray-900 transition-colors"
+              >
+                COMPARE
+              </button>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex gap-1.5">
+                <button
+                  title="Black"
+                  class="w-8 h-8 rounded-md border-2 transition-all duration-150 border-gray-900 scale-110"
+                  style="background-color: rgb(26, 26, 26)"
+                >
+                <img src="public/prd_thumb1.png" />
+                </button
+                ><button
+                  title="Silver"
+                  class="w-8 h-8 rounded-md border-2 transition-all duration-150 border-transparent hover:border-gray-400"
+                  style="background-color: rgb(200, 200, 200)"
+                >
+                <img src="public/prd_thumb.png" />
+              </button>
+              </div>
+              <button
+                class="btn-add hover-link bg-black flex items-center gap-1.5 text-white text-xs font-semibold px-4 py-2 rounded-full"
+              >
+               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.46851 5.92467H5.92442M5.92442 5.92467H9.38034M5.92442 5.92467V2.46875M5.92442 5.92467V9.38058" stroke="white" stroke-width="1.48111" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                  Add
+              </button>
+            </div>
+            <button
+              class="hover-link bg-black w-full text-white text-sm font-semibold py-3.5 rounded-full"
+            >
+              Check This Out
+            </button>
+          </div>
+              <div class="card-enter relative flex-shrink-0 w-72 bg-[#FAFAFA] rounded-2xl p-5 flex flex-col hover:-translate-y-1 transition-transform duration-200  mx-4" >
+            <div class="absolute right-5 top-5 flex justify-end items-center gap-1 mb-2 bg-white rounded-full px-2 py-1">
+              <span class="text-amber-400 text-base leading-none">★</span
+              ><span class="text-xs font-semibold text-gray-700">5.0</span>
+            </div>
+            <div
+              class="w-full  flex items-center justify-center mb-0 overflow-hidden"
+            >
+              <img
+                alt="X-S20"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                src="public/product_image.png"
+              />
+            </div>
+            <p
+              class="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1"
+            >
+              CAMERA
+            </p>
+            <h3
+              class="text-2xl md:text-[38px] font-extrabold text-gray-900 tracking-tight mb-2"
+            >
+              X-S20
+            </h3>
+            <span
+              class="self-start bg-green-500 text-white text-[14px] font-bold px-2 py-1 rounded mb-2 w-fit block"
+              >Save ₹38,999</span
+            >
+            <div class="flex items-baseline gap-2 mb-4 border-b border-gray-200 pb-0">
+              <span class="text-[27px] font-extrabold text-black">₹5,11,000</span
+              ><span class="relative text-[18px] text-[#81818199]
+                before:content-['']
+                before:absolute
+                before:left-0
+                before:top-1/2
+                before:w-full
+                before:h-[2px]
+                before:bg-[#FF0000]
+                before:-rotate-[6deg]
+                before:origin-center">
+                ₹5,49,999
+              </span>
+
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-sm text-black font-medium"
+                >Color: <strong class="text-black font-semibold">Black</strong></span
+              ><button
+                class="text-xs font-bold tracking-widest text-[#17171799] uppercase hover:text-gray-900 transition-colors"
+              >
+                COMPARE
+              </button>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex gap-1.5">
+                <button
+                  title="Black"
+                  class="w-8 h-8 rounded-md border-2 transition-all duration-150 border-gray-900 scale-110"
+                  style="background-color: rgb(26, 26, 26)"
+                >
+                <img src="public/prd_thumb1.png" />
+                </button
+                ><button
+                  title="Silver"
+                  class="w-8 h-8 rounded-md border-2 transition-all duration-150 border-transparent hover:border-gray-400"
+                  style="background-color: rgb(200, 200, 200)"
+                >
+                <img src="public/prd_thumb.png" />
+              </button>
+              </div>
+              <button
+                class="btn-add hover-link bg-black flex items-center gap-1.5 text-white text-xs font-semibold px-4 py-2 rounded-full"
+              >
+               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.46851 5.92467H5.92442M5.92442 5.92467H9.38034M5.92442 5.92467V2.46875M5.92442 5.92467V9.38058" stroke="white" stroke-width="1.48111" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                  Add
+              </button>
+            </div>
+            <button
+              class="hover-link bg-black w-full text-white text-sm font-semibold py-3.5 rounded-full"
+            >
+              Check This Out
+            </button>
+          </div>
+      </div>
+    </section>
+
+   <section class="py-10 md:py-20 bg-white overflow-hidden">
+
+  <!-- Heading -->
+  <div class="filrm page-width px-4 md:px-0">
+    
+    <h2
+      class="font-bold text-2xl sm:text-3xl md:text-[56px] 
+             text-center uppercase tracking-[2px] 
+             relative mb-12 md:mb-20
+             before:block before:w-[150px] md:before:w-auto
+             before:h-[40px] md:before:h-full
+             before:bg-[url('public/film_vector.png')] 
+             before:bg-no-repeat before:bg-contain
+             before:absolute before:-bottom-8 md:before:-bottom-[50px]
+             before:left-1/2 before:-translate-x-1/2 md:before:left-[40%] md:before:translate-x-0">
+      Film Simulation
+    </h2>
+
+    <p class="text-base md:text-[18px] text-center max-w-3xl mx-auto">
+      The 20 Film Simulation modes offered by FUJIFILM X-M5, including REALA ACE mode, harness 90 years of Fujifilm color science.
+    </p>
+
+  </div>
+
+  <!-- Images Section -->
+  <div class="flex flex-col md:flex-row gap-10 md:gap-20 mt-16 md:mt-40  md:px-0">
+    
+    <!-- Left Image -->
+    <div class="w-full md:w-[20%] flex justify-start">
+      <img class="object-contain max-w-[180px] md:max-w-full" src="public/clock.png" />
+    </div>
+
+    <!-- Right Images -->
+    <div class="flex flex-col md:flex-row gap-10 md:gap-40 w-full md:w-[80%] items-center">
+      
+      <img
+        class="w-[50%] md:w-[20%] object-contain"
+        src="public/acros.png"
+      />
+
+      <img
+        class="w-full md:w-[70%] object-contain"
+        src="public/main_film.png"
+      />
+
+    </div>
+
+  </div>
+</section>
+
+
+   <section
+  style="background-image: url('public/video-media.png');"
+  class="relative rounded-t-[30px] overflow-hidden flex items-center justify-center text-center bg-cover bg-center h-[550px] md:h-[550px] sm:h-[500px] xs:h-[450px] px-4"
+>
+  <div class="relative z-10 flex flex-col items-center justify-center text-center">
+    
+    <!-- Image -->
+    <img class="w-full max-w-[400px] md:max-w-[500px] mb-6 md:mb-10" src="public/filem_jurney.png" alt="Film Journey" />
+
+    <!-- Paragraph -->
+    <p class="text-white text-[16px] sm:text-[18px] md:text-[18px] mb-8 md:mb-20 text-center leading-snug">
+      United by passion for the perfect shot, Fujifilm X Academy brings<br>
+      together creators of all levels to learn, share, and grow
+    </p>
+
+    <!-- Button -->
+    <a
+      href="#"
+      class="relative rounded-full inline-flex items-center gap-2 px-6 sm:px-7 py-2 sm:py-3 bg-white text-black text-xs sm:text-sm font-semibold tracking-[3px] uppercase hover:bg-black hover:text-white transition-all"
+    >
+      Start Your Journey
+      <svg
+        width="11"
+        height="12"
+        viewBox="0 0 11 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="group-hover:fill-white"
+          d="M8.37031 6.75L4.52031 10.95L5.5 12L11 6L5.5 0L4.52031 1.05L8.37031 5.25H0V6.75H8.37031Z"
+          fill="black"
+        />
+      </svg>
+    </a>
+
+  </div>
+</section>
+
+    <section class="py-10 md:py-20 bg-white rounded-t-[30px]">
+      <div class=" page-width">
+        <div class="flex max-md:flex-col max-md:gap-5 items-center justify-between">
+          
+        <div class="flex flex-col gap-10">
+        <h2 class="font-bold text-3xl  md:text-[56px] uppercase tracking-[2px]">
+          Shop The <span
+            class="relative before:block before:w-full before:h-full before:bg-[url('public/insta_vector.png')] before:bg-no-repeat before:absolute md:before:bottom-[-55px] before:left-[0%]"
+            >Feed</span
+          >
+        </h2>
+        <p>
+          Follow Fujifilm moments on Instagram and find the perfect camera for your journey.
+        </p></div>
+        <div class="insta_detail flex items-center gap-1">
+          <img src="public/insta-logo.png" />
+            <p>@fujifilmxindia</p>
+        </div>
+        </div>
+        <div class="feed-container w-full mt-20">
+          <div class="relative mx-4 cursor-pointer overflow-hidden rounded-2xl aspect-[4/5] bg-gray-100 group bg-cover bg-center hover:shadow-md" style="background-image: url(public/insta-1.png)">
+          </div>
+           <div class="relative mx-4 cursor-pointer overflow-hidden rounded-2xl aspect-[4/5] bg-gray-100 group bg-cover bg-center hover:shadow-md" style="background-image: url(public/insta-2.png)">
+          </div>
+           <div class="relative mx-4 cursor-pointer overflow-hidden rounded-2xl aspect-[4/5] bg-gray-100 group bg-cover bg-center hover:shadow-md" style="background-image: url(public/insta-3.png)">
+          </div>
+           <div class="relative mx-4 cursor-pointer overflow-hidden rounded-2xl aspect-[4/5] bg-gray-100 group bg-cover bg-center hover:shadow-md" style="background-image: url(public/insta-4.png)">
+          </div>
+           <div class="relative mx-4 cursor-pointer overflow-hidden rounded-2xl aspect-[4/5] bg-gray-100 group bg-cover bg-center hover:shadow-md" style="background-image: url(public/insta-2.png)">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-black page-width py-10 md:py-20">
+       <div class="flex max-md:flex-wrap gap-5">
+        <img src="public/XAPP.png" />
+         <img src="public/XAPP.png" />
+       </div>
+    </section>
+     <section class="py-10 md:py-20 w-full">
+
+    <!-- ── Heading ───────────────────────────────────── -->
+    <div class="px-6 mb-14">
+      <h2 class="font-display text-4xl pt-20 md:pt-[80px] md:text-[80px] text-[#CCCCCC] leading-none tracking-wide"
+          >
+        WHAT XPERTS ARE SAYING
+      </h2>
+    </div>
+
+   
+    <div class="marquee-fade overflow-hidden mb-5">
+      <div class="marquee-track marquee-track--left gap-10 md:gap-[50px] px-2.5">
+
+        <!-- Set A -->
+        <!-- card 1 -->
+        <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+
+        <!-- card 2 -->
+     <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+
+        <!-- card 3 -->
+       <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+
+        <!-- card 4 -->
+      <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+
+        <!-- card 5 -->
+       <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+
+        <!-- Set B (exact duplicate for seamless loop) -->
+       <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+       <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+      <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+      <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+       <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+
+      </div>
+    </div>
+
+    
+    <div class="marquee-fade overflow-hidden mt-10">
+      <div class="marquee-track marquee-track--right gap-10 md:gap-[50px] px-2.5">
+
+        <!-- Set A -->
+        <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+         <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+         <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+         <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+         <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+
+
+        <!-- Set B — duplicate for seamless loop -->
+         <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+         <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+         <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+         <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+         <div class="card-shine flex-shrink-0 w-[554px] bg-[#fff] border-[1px] border-[#D9D9D9] rounded-2xl p-6 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <img src="public/person-04.webp.png" alt="David Lewis" class="w-14 h-14 rounded-full object-cover flex-shrink-0" />
+            <div>
+              <p class="font-semibold italic text-gray-900 text-sm">David Lewis</p>
+              <p class="italic text-gray-500 text-xs">The Interior Journal</p>
+              <div class="flex gap-0.5 mt-1">
+                <span class="text-[#EF6820] text-sm">★★★★★</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed">Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. </p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <section class="page-width py-20 bg-[#FAFAFA]">
+
+  <!-- Header -->
+  <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4 md:gap-0">
+    <h2 class="text-black text-4xl md:text-[56px] font-bold">Latest Stories</h2>
+    <button class="btn-view hover-link group flex items-center gap-2 text-black border-2 border-black text-sm font-medium px-5 py-2.5 rounded-full">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="group-hover:fill-white" d="M14.85 9.90046V1.65045L12.6121 2.64509C12.1076 2.8693 11.8554 2.98141 11.6001 3.00945C11.3202 3.04021 11.037 2.99881 10.7777 2.88918C10.541 2.78922 10.3315 2.60958 9.91232 2.25031C9.35577 1.77322 9.07742 1.53467 8.76944 1.43252C8.43218 1.32067 8.06785 1.32067 7.7306 1.43252C7.4226 1.53467 7.14429 1.77322 6.58769 2.25031C6.16854 2.60958 5.95896 2.78922 5.72241 2.88918C5.46301 2.99881 5.17987 3.04021 4.89994 3.00945C4.64468 2.98141 4.39244 2.8693 3.88796 2.64509L1.65002 1.65045V12.8705C1.65002 14.7186 1.65002 15.6427 2.0097 16.3487C2.32609 16.9696 2.83092 17.4744 3.45186 17.7908C4.15776 18.1505 5.08185 18.1505 6.93002 18.1505H16.5M14.85 9.90046H15.51C16.4341 9.90046 16.8962 9.90046 17.2491 10.0803C17.5596 10.2385 17.812 10.4909 17.9702 10.8014C18.15 11.1543 18.15 11.6164 18.15 12.5405V16.5005C18.15 17.4118 17.4113 18.1505 16.5 18.1505M14.85 9.90046V16.5005C14.85 17.4118 15.5887 18.1505 16.5 18.1505M5.77502 14.0255H10.725M5.77502 7.42546H9.07502M5.77502 10.7255H10.725" stroke="#171717" stroke-width="1.2375" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      View All
+    </button>
+  </div>
+
+  <!-- Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr_650px] gap-10 items-stretch">
+
+    <!-- Featured Story -->
+    <div class="relative rounded-2xl overflow-hidden group cursor-pointer min-h-[560px]">
+
+      <div class="absolute inset-0 overflow-hidden">
+        <img src="public/main_blog.png" alt="Wildlife Photography" class="img-zoom w-full h-full object-cover"/>
+      </div>
+
+      <div class="hero-overlay absolute inset-0"></div>
+
+      <div class="absolute top-5 left-5">
+        <span class="bg-[#4D7C0F] text-white text-xs font-semibold px-3 py-1.5 rounded-full">Camera</span>
+      </div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-7">
+        <div class="flex flex-wrap items-center gap-3 text-white/60 text-xs mb-3">
+          <span class="flex items-center gap-1.5">
+            <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.05 0.450195V2.91509M8.85001 0.450195V2.91509M12.3 5.55019H0.600018M5.49 13.0502H7.41C9.17419 13.0502 10.0563 13.0502 10.7301 12.7069C11.3228 12.4048 11.8047 11.923 12.1067 11.3302C12.45 10.6564 12.45 9.7744 12.45 8.0102V6.9902C12.45 5.22603 12.45 4.34395 12.1067 3.67013C11.8047 3.07741 11.3228 2.59553 10.7301 2.29352C10.0563 1.95019 9.17419 1.95019 7.41 1.95019H5.49C3.72583 1.95019 2.84375 1.95019 2.16993 2.29352C1.57722 2.59553 1.09533 3.07741 0.793329 3.67013C0.449997 4.34395 0.449997 5.22603 0.449997 6.99019V8.0102C0.449997 9.7744 0.449997 10.6564 0.793329 11.3302C1.09533 11.923 1.57722 12.4048 2.16993 12.7069C2.84375 13.0502 3.72583 13.0502 5.49 13.0502Z" stroke="white" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Oct 09, 2023
+          </span>
+          <span class="w-px h-3 bg-white/30"></span>
+          <span class="flex items-center gap-1.5">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.05001 5.2502H8.85003M4.05001 7.6502H6.45002M12.45 6.4502C12.45 9.76393 9.76371 12.4502 6.45002 12.4502C5.76639 12.4502 5.18014 12.3529 4.63578 12.1581C4.12129 11.9741 3.86404 11.8821 3.76532 11.8589C2.85458 11.6447 2.47676 12.2688 1.69181 12.3997C1.30626 12.4638 0.963219 12.1482 0.995214 11.7587C1.02319 11.418 1.25874 11.0959 1.35274 10.7689C1.54815 10.0888 1.28299 9.57331 1.00286 8.9686C0.648102 8.20278 0.450012 7.34959 0.450012 6.4502C0.450012 3.13649 3.13631 0.450195 6.45002 0.450195C9.76371 0.450195 12.45 3.13649 12.45 6.4502Z" stroke="white" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            0 comments
+          </span>
+        </div>
+
+        <h3 class="text-white text-3xl font-[500] leading-tight mb-3 transition-colors">
+          Wildlife Photography
+        </h3>
+
+        <p class="text-white/70 text-sm leading-relaxed mb-5 max-w-full md:max-w-xl">
+          The realm of camera has witnessed incredible advancements over the past decade. As we venture further into this era of technological marvels, the way we experience and interact with sound continues to evolve.
+        </p>
+
+        <a href="#" class="read-more text-white text-sm font-medium">Read more</a>
+      </div>
+    </div>
+
+    <!-- Other Stories -->
+  
+    <div class="flex flex-col gap-6 lg:gap-10">
+
+      
+        <div class="flex flex-col sm:flex-row bg-transparent rounded-2xl overflow-hidden group cursor-pointer transition-colors duration-200">
+
+        
+          <div class="w-full md:w-[295px] flex-shrink-0 overflow-hidden">
+            <img
+              src="public/blog_2.png"
+              alt="Inside In-Ear Excellence"
+              class="img-zoom w-full h-full object-cover"
+            />
+          </div>
+
+          
+          <div class="p-5 flex flex-col justify-start gap-[18px] flex-1 min-w-0">
+           
+            <div class="flex items-center gap-2 text-black text-xs mb-2">
+              <span class="flex items-center gap-1">
+                <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.04995 0.450195V2.91509M8.84997 0.450195V2.91509M12.2999 5.55019H0.599972M5.48995 13.0502H7.40996C9.17415 13.0502 10.0562 13.0502 10.7301 12.7069C11.3227 12.4048 11.8047 11.923 12.1066 11.3302C12.45 10.6564 12.45 9.7744 12.45 8.0102V6.9902C12.45 5.22603 12.45 4.34395 12.1066 3.67013C11.8047 3.07741 11.3227 2.59553 10.7301 2.29352C10.0562 1.95019 9.17415 1.95019 7.40996 1.95019H5.48995C3.72579 1.95019 2.84371 1.95019 2.16989 2.29352C1.57717 2.59553 1.09529 3.07741 0.793283 3.67013C0.449951 4.34395 0.449951 5.22603 0.449951 6.99019V8.0102C0.449951 9.7744 0.449951 10.6564 0.793283 11.3302C1.09529 11.923 1.57717 12.4048 2.16989 12.7069C2.84371 13.0502 3.72579 13.0502 5.48995 13.0502Z" stroke="#171717" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                Oct 09, 2023
+              </span>
+              <span class="w-px h-2.5 bg-black"></span>
+              <span class="flex items-center gap-1">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.04995 5.2502H8.84997M4.04995 7.6502H6.44995M12.45 6.4502C12.45 9.76393 9.76365 12.4502 6.44995 12.4502C5.76633 12.4502 5.18008 12.3529 4.63572 12.1581C4.12123 11.9741 3.86398 11.8821 3.76526 11.8589C2.85452 11.6447 2.4767 12.2688 1.69174 12.3997C1.3062 12.4638 0.963158 12.1482 0.995153 11.7587C1.02313 11.418 1.25868 11.0959 1.35268 10.7689C1.54809 10.0888 1.28293 9.57331 1.00279 8.9686C0.648041 8.20278 0.449951 7.34959 0.449951 6.4502C0.449951 3.13649 3.13624 0.450195 6.44995 0.450195C9.76365 0.450195 12.45 3.13649 12.45 6.4502Z" stroke="#171717" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+                0 comments
+              </span>
+            </div>
+
+         
+            <h4 class="text-black text-lg font-semibold leading-snug mb-2  transition-colors">
+              Inside In-Ear Excellence
+            </h4>
+
+           
+            <p class="text-black text-xs leading-relaxed mb-3 line-clamp-3">
+              In the camera tech world, there's always room for innovation. But, there are few moments when a product not only meets expectations but also redefines them.
+            </p>
+
+          
+            <a href="#" class="read-more-sm text-black text-xs font-medium transition-colors">Read more</a>
+          </div>
+        </div>
+
+        <hr class="border-t-[0.9px] border-[#1717171A]">
+        <div class="flex flex-col sm:flex-row bg-transparent rounded-2xl overflow-hidden group cursor-pointer transition-colors duration-200">
+
+        
+          <div class="w-full md:w-[295px] flex-shrink-0 overflow-hidden">
+            <img
+              src="public/blog-3.png"
+              alt="International Sound Artistry"
+              class="img-zoom w-full h-full object-cover"
+            />
+          </div>
+
+          
+          <div class="p-5 flex flex-col justify-start gap-[18px] flex-1 min-w-0">
+           
+            <div class="flex items-center gap-2 text-black text-xs mb-2">
+              <span class="flex items-center gap-1">
+                <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.04995 0.450195V2.91509M8.84997 0.450195V2.91509M12.2999 5.55019H0.599972M5.48995 13.0502H7.40996C9.17415 13.0502 10.0562 13.0502 10.7301 12.7069C11.3227 12.4048 11.8047 11.923 12.1066 11.3302C12.45 10.6564 12.45 9.7744 12.45 8.0102V6.9902C12.45 5.22603 12.45 4.34395 12.1066 3.67013C11.8047 3.07741 11.3227 2.59553 10.7301 2.29352C10.0562 1.95019 9.17415 1.95019 7.40996 1.95019H5.48995C3.72579 1.95019 2.84371 1.95019 2.16989 2.29352C1.57717 2.59553 1.09529 3.07741 0.793283 3.67013C0.449951 4.34395 0.449951 5.22603 0.449951 6.99019V8.0102C0.449951 9.7744 0.449951 10.6564 0.793283 11.3302C1.09529 11.923 1.57717 12.4048 2.16989 12.7069C2.84371 13.0502 3.72579 13.0502 5.48995 13.0502Z" stroke="#171717" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                Oct 09, 2023
+              </span>
+              <span class="w-px h-2.5 bg-black"></span>
+              <span class="flex items-center gap-1">
+           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.04995 5.2502H8.84997M4.04995 7.6502H6.44995M12.45 6.4502C12.45 9.76393 9.76365 12.4502 6.44995 12.4502C5.76633 12.4502 5.18008 12.3529 4.63572 12.1581C4.12123 11.9741 3.86398 11.8821 3.76526 11.8589C2.85452 11.6447 2.4767 12.2688 1.69174 12.3997C1.3062 12.4638 0.963158 12.1482 0.995153 11.7587C1.02313 11.418 1.25868 11.0959 1.35268 10.7689C1.54809 10.0888 1.28293 9.57331 1.00279 8.9686C0.648041 8.20278 0.449951 7.34959 0.449951 6.4502C0.449951 3.13649 3.13624 0.450195 6.44995 0.450195C9.76365 0.450195 12.45 3.13649 12.45 6.4502Z" stroke="#171717" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+                0 comments
+              </span>
+            </div>
+
+         
+            <h4 class="text-black text-lg font-semibold leading-snug mb-2  transition-colors">
+              The International Sound Artistry Conference Recap
+            </h4>
+
+           
+            <p class="text-black text-xs leading-relaxed mb-3 line-clamp-3">
+              This year's Fujifilm was nothing short of sensational. As enthusiasts and professionals from around the globe convened, the air buzzed with anticipation and excitement.
+            </p>
+
+           
+            <a href="#" class="read-more-sm text-black text-xs font-medium transition-colors">Read more</a>
+          </div>
+        </div>
+
+      </div>
+  </div>
+</section>
+
+  
+    <!-- Newsletter Footer -->
+    <footer class="bg-[#1F1F1F] relative ">
+      <section class="page-width py-10 bg-white rounded-b-[30px]">
+<div class="flex flex-wrap justify-between items-center ">
+      <div class="flex items-start gap-4 py-4 lg:py-0 lg:px-8 first:lg:pl-0 last:lg:pr-0">
+        <div class="flex-shrink-0 text-gray-700 mt-0.5">
+         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.28501 6.23H16.515C16.0783 5.05467 15.3813 4.016 14.424 3.114C13.4673 2.21267 12.376 1.608 11.15 1.3L8.28501 6.23ZM6.21501 8.23L10.37 1.1C10.1867 1.06667 9.95867 1.04167 9.68601 1.025C9.41334 1.00833 9.18467 1 9.00001 1C7.90001 1 6.87501 1.20833 5.92501 1.625C4.97501 2.04167 4.13334 2.6 3.40001 3.3L6.21501 8.23ZM1.25001 11H6.93001L2.85501 3.908C2.26967 4.62933 1.81434 5.41533 1.48901 6.266C1.16367 7.11667 1.00067 8.028 1.00001 9C1.00001 9.35 1.02101 9.68767 1.06301 10.013C1.10501 10.3383 1.16734 10.6673 1.25001 11ZM6.88901 16.7L9.74201 11.77H1.48401C1.92134 12.9453 2.62501 13.984 3.59501 14.886C4.56501 15.788 5.66334 16.3927 6.89001 16.7M9.00001 17C10.1 17 11.125 16.7917 12.075 16.375C13.025 15.9583 13.8667 15.4 14.6 14.7L11.785 9.77L7.66901 16.862C7.85234 16.908 8.07001 16.9427 8.32201 16.966C8.57401 16.9893 8.80001 17.0007 9.00001 17ZM15.146 14.092C15.6793 13.4087 16.1217 12.6227 16.473 11.734C16.8243 10.8453 17 9.934 17 9C17 8.65 16.9793 8.31267 16.938 7.988C16.8967 7.66333 16.834 7.334 16.75 7H11.07L15.146 14.092ZM9.00001 18C7.76134 18 6.59467 17.7633 5.50001 17.29C4.40534 16.816 3.45201 16.1727 2.64001 15.36C1.82801 14.5473 1.18467 13.594 0.710006 12.5C0.235339 11.406 -0.00132773 10.2393 5.60224e-06 9C5.60224e-06 7.75733 0.236672 6.58967 0.710006 5.497C1.18401 4.40367 1.82734 3.45133 2.64001 2.64C3.45267 1.82867 4.40601 1.18533 5.50001 0.71C6.59467 0.236667 7.76134 0 9.00001 0C10.2427 0 11.4103 0.236667 12.503 0.71C13.5963 1.184 14.549 1.82733 15.361 2.64C16.173 3.45267 16.816 4.405 17.29 5.497C17.7633 6.59033 18 7.758 18 9C18 10.2387 17.7633 11.4053 17.29 12.5C16.816 13.5947 16.1727 14.548 15.36 15.36C14.5473 16.172 13.595 16.8153 12.503 17.29C11.411 17.7647 10.2433 18.0013 9.00001 18Z" fill="#1E1E1E"/>
+<path d="M12.1943 17.4141C11.1914 17.8042 10.1273 18.0012 9.00001 18C7.99778 18 7.0437 17.8421 6.13575 17.5322C7.03568 17.8342 7.99837 18 9.00001 18C10.1252 18 11.2014 17.7912 12.1943 17.4141ZM0.542974 12.0859C0.594912 12.2251 0.650615 12.3631 0.710006 12.5C1.18467 13.594 1.82801 14.5473 2.64001 15.36C3.45201 16.1727 4.40534 16.816 5.50001 17.29C5.70895 17.3804 5.92155 17.4591 6.13575 17.5322C3.54677 16.6635 1.48226 14.6519 0.545904 12.0947L0.542974 12.0859ZM17.5645 11.7695C16.7245 14.3688 14.7347 16.4491 12.1943 17.4141C12.2975 17.3739 12.4011 17.3343 12.503 17.29C13.595 16.8153 14.5473 16.172 15.36 15.36C16.1727 14.548 16.816 13.5947 17.29 12.5C17.3937 12.2602 17.4835 12.0162 17.5645 11.7695ZM14.6 14.7C13.8667 15.4 13.025 15.9583 12.075 16.375C11.125 16.7917 10.1 17 9.00001 17C8.80001 17.0007 8.57401 16.9893 8.32201 16.966C8.07001 16.9427 7.85234 16.908 7.66901 16.862L11.785 9.77L14.6 14.7ZM9.74201 11.77L6.89001 16.7C5.66334 16.3927 4.56501 15.788 3.59501 14.886C2.62501 13.984 1.92134 12.9453 1.48401 11.77H9.74201ZM16.75 7C16.834 7.334 16.8967 7.66333 16.938 7.988C16.9793 8.31267 17 8.65 17 9C17 9.934 16.8243 10.8453 16.473 11.734C16.1217 12.6227 15.6793 13.4087 15.146 14.092L11.07 7H16.75ZM0.545904 5.90527C0.192572 6.87022 5.60224e-06 7.91264 5.60224e-06 9C5.60224e-06 10.0754 0.189221 11.1065 0.535162 12.0625C0.177747 11.0963 -0.00115165 10.0757 5.60224e-06 9C5.60224e-06 7.91076 0.182234 6.87927 0.545904 5.90527ZM17.4541 5.90527C17.8178 6.87977 18 7.91126 18 9C18 9.96737 17.8531 10.89 17.5645 11.7695C17.8464 10.8969 18 9.96646 18 9C18 7.91264 17.8074 6.87022 17.4541 5.90527ZM6.93001 11H1.25001C1.16734 10.6673 1.10501 10.3383 1.06301 10.013C1.02101 9.68767 1.00001 9.35 1.00001 9C1.00067 8.028 1.16367 7.11667 1.48901 6.266C1.81434 5.41533 2.26967 4.62933 2.85501 3.908L6.93001 11ZM9.00001 1C9.18467 1 9.41334 1.00833 9.68601 1.025C9.95867 1.04167 10.1867 1.06667 10.37 1.1L6.21501 8.23L3.40001 3.3C4.13334 2.6 4.97501 2.04167 5.92501 1.625C6.87501 1.20833 7.90001 1 9.00001 1ZM11.15 1.3C12.376 1.608 13.4673 2.21267 14.424 3.114C15.3813 4.016 16.0783 5.05467 16.515 6.23H8.28501L11.15 1.3ZM6.13575 0.466797C5.92145 0.539924 5.70905 0.61961 5.50001 0.71C4.40601 1.18533 3.45267 1.82867 2.64001 2.64C1.82734 3.45133 1.18401 4.40367 0.710006 5.497C0.65158 5.63188 0.597117 5.76811 0.545904 5.90527C1.48229 3.348 3.54664 1.3355 6.13575 0.466797ZM12.1621 0.572266C14.6113 1.49162 16.5539 3.44682 17.4541 5.90527C17.4029 5.76812 17.3484 5.63189 17.29 5.497C16.816 4.405 16.173 3.45267 15.361 2.64C14.549 1.82733 13.5963 1.184 12.503 0.71C12.3903 0.661198 12.2764 0.616036 12.1621 0.572266ZM12.0342 0.524414C11.0862 0.185005 10.0647 0 9.00001 0C10.0668 0 11.0779 0.175577 12.0342 0.524414ZM9.00001 0C7.99848 6.07481e-07 7.03559 0.164879 6.13575 0.466797C7.04361 0.156996 7.99789 2.31917e-06 9.00001 0Z" fill="#D9D9D9"/>
+<path d="M11 9C11 10.1046 10.1046 11 9 11C7.89543 11 7 10.1046 7 9C7 7.89543 7.89543 7 9 7C10.1046 7 11 7.89543 11 9Z" fill="white"/>
+</svg>
+
+        </div>
+        <div>
+          <p class="text-[18px] font-semibold text-black">Customer service</p>
+          <p class="text-[12px] mt-0.5">Focused on You, Just Like Your Lens</p>
+        </div>
+      </div>
+      <hr class="h-[45px] w-[1px] bg-[#1717171A] hidden md:block ">
+
+      <div class="flex items-start gap-4 py-4 lg:py-0 lg:px-8">
+        <div class="flex-shrink-0 text-gray-700 mt-0.5">
+         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.62494 7.87609L13.725 2.92609M9.67505 10.5761L17.775 5.62609M9.67505 10.5761L1.57505 5.62609M9.67505 10.5761V19.5761M0.675049 8.07203V12.1802C0.675049 13.0721 0.675049 13.518 0.80302 13.9188C0.916267 14.2734 1.10161 14.6007 1.34742 14.8802C1.6252 15.1961 2.00761 15.4256 2.77243 15.8846L7.45243 18.6926C8.26052 19.1774 8.66462 19.4198 9.0959 19.5145C9.4775 19.5983 9.8726 19.5983 10.2542 19.5145C10.6855 19.4198 11.0896 19.1774 11.8977 18.6926L16.5777 15.8846C17.3425 15.4256 17.7249 15.1961 18.0027 14.8802C18.2484 14.6007 18.4338 14.2734 18.5471 13.9188C18.675 13.518 18.675 13.0721 18.675 12.1802V8.07203C18.675 7.18011 18.675 6.73414 18.5471 6.33343C18.4338 5.97882 18.2484 5.65145 18.0027 5.3719C17.7249 5.056 17.3425 4.82656 16.5777 4.36766L11.8977 1.55966C11.0896 1.0748 10.6855 0.832365 10.2542 0.73764C9.8726 0.653859 9.4775 0.653859 9.0959 0.73764C8.66462 0.832365 8.26052 1.0748 7.45243 1.55966L2.77243 4.36766C2.00761 4.82656 1.6252 5.056 1.34742 5.3719C1.10161 5.65145 0.916267 5.97882 0.80302 6.33343C0.675049 6.73414 0.675049 7.18011 0.675049 8.07203Z" stroke="#171717" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+        </div>
+        <div>
+          <p class="text-[18px] font-semibold text-black">Fast Free Shipping</p>
+          <p class="text-[12px] mt-0.5">Get free shipping on orders of $150 or more</p>
+        </div>
+      </div>
+  <hr class="h-[45px] w-[1px] bg-[#1717171A] hidden md:block">
+      <div class="flex items-start gap-4 py-4 lg:py-0 lg:px-8">
+        <div class="flex-shrink-0 text-gray-700 mt-0.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-[18px] font-semibold text-black">Refer a friend</p>
+          <p class="text-[12px] mt-0.5">Refer a friend and get 15% off each other.</p>
+        </div>
+      </div>
+ <hr class="h-[45px] w-[1px] bg-[#1717171A]  hidden md:block">
+      <div class="flex items-start gap-4 py-4 lg:py-0 lg:px-8">
+        <div class="flex-shrink-0 text-gray-700 mt-0.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-[18px] font-semibold text-black">Secure payment</p>
+          <p class="text-[12px] mt-0.5">Your payment information is processed securely</p>
+        </div>
+      </div>
+</div>
+  </section>
+   <div class="page-width bg-[#1F1F1F]">
+  <div class="flex flex-col lg:flex-row gap-10 lg:gap-1 opacity-[0.6] pt-16 pb-16">
+
+    <!-- Left Column: Logo & Links -->
+    <div class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr] gap-8 lg:gap-12">
+
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <div class="flex flex-col gap-1 items-start sm:items-center lg:items-start">
+          <img src="public/Fuji_X-_GFX-white-logo 1.png" alt="FUJIFILM" class="w-[110px]" />
+        </div>
+      </div>
+
+      <!-- Collections -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-5">Collections</p>
+        <ul class="flex flex-col gap-3">
+          <li><a href="#" class="nav-link text-white text-sm">Cameras</a></li>
+          <li><a href="#" class="nav-link text-white text-sm">Lenses</a></li>
+          <li><a href="#" class="nav-link text-white text-sm">Binoculars</a></li>
+          <li><a href="#" class="nav-link text-white text-sm">Accessories</a></li>
+        </ul>
+      </div>
+
+      <!-- Information -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-5">Information</p>
+        <ul class="flex flex-col gap-3">
+          <li><a href="#" class="nav-link text-white text-sm">Our Story</a></li>
+          <li><a href="#" class="nav-link text-white text-sm">Our Journal</a></li>
+          <li><a href="#" class="nav-link text-white text-sm">FAQs</a></li>
+          <li><a href="#" class="nav-link text-white text-sm">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Account -->
+      <div>
+        <p class="text-white font-semibold text-sm mb-5">Account</p>
+        <ul class="flex flex-col gap-3">
+          <li><a href="#" class="nav-link text-white text-sm">Login/Create Account</a></li>
+          <li><a href="#" class="nav-link text-white text-sm">Registered Products</a></li>
+          <li><a href="#" class="nav-link text-white text-sm">Orders & Returns</a></li>
+          <li><a href="#" class="nav-link text-white text-sm">My Information</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Newsletter & Social -->
+    <div class="w-full lg:w-1/2 lg:border-l-[1px] border-[#7a7a7a] lg:pl-10">
+      <div class="flex flex-col items-center lg:items-start max-w-full lg:max-w-[60%] mx-auto gap-10">
+
+        <!-- Newsletter -->
+        <div class="w-full">
+          <h3 class="text-white/80 text-2xl sm:text-3xl font-bold leading-tight mb-6 text-center lg:text-left">
+            Stay in the loop with our weekly newsletter
+          </h3>
+          <div class="flex flex-row items-center sm:items-stretch bg-[#2a2a2a] rounded-full px-5 py-2 gap-3">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="flex-1 bg-transparent text-sm text-white placeholder-gray-500 outline-none py-2"
+            />
+            <button class="submit-btn flex-shrink-0 w-9 h-9 rounded-full bg-[#c3c3c3] flex items-center justify-center mt-2 sm:mt-0">
+              <svg width="16" height="16" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex flex-wrap justify-center lg:justify-start items-center gap-3">
+          <a href="#" class="social-btn w-10 h-10 flex items-center justify-center">
+            <svg width="17" height="17" fill="white" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-btn w-10 h-10 flex items-center justify-center">
+            <svg width="17" height="17" fill="white" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.002 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-btn w-10 h-10 flex items-center justify-center">
+            <svg width="17" height="17" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="white"/>
+            </svg>
+          </a>
+          <a href="#" class="social-btn w-10 h-10 flex items-center justify-center">
+            <svg width="17" height="17" fill="white" viewBox="0 0 24 24">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1c1c1c"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+      <div class="bg-black py-[30px]">
+      <div class="page-width flex max-md:flex-col gap-2 items-center justify-between py-4">
+        <p class="text-white text-xs">© FUJIFILM Corporation.</p>
+        <img src="public/List.png" alt="FUJIFILM" class="w-[270px] ml-4">
+
+      </div>
+    </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+      $(function () {
+        // Hero Slider
+       $(".hero-slider").slick({
+  dots: true,
+  arrows: true,
+  infinite: true,
+  speed: 700,
+  fade: true,
+  cssEase: "ease-in-out",
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: false,
+  adaptiveHeight: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        arrows: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        dots: false
+      }
+    }
+  ]
+});
+
+
+        // Category Slider
+        $(".category-slider").slick({
+          dots: false,
+          arrows: true,
+          infinite: false,
+          speed: 400,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          slidesToShow: 5,
+          slidesToScroll: 2,
+          responsive: [
+            { breakpoint: 1200, settings: { slidesToShow: 4 } },
+            { breakpoint: 900, settings: { slidesToShow: 3 } },
+            { breakpoint: 600, settings: { slidesToShow: 2 } },
+          ],
+        });
+
+        // Products Slider
+       $(".products-slider").slick({
+  dots: false,
+  arrows: true,
+  infinite: true,
+  speed: 400,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  pauseOnHover: true,
+  cssEase: "ease-in-out",
+
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        arrows: false,     
+        dots: true,        
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        arrows: false,
+        dots: true,
+      
+      },
+    },
+  ],
+});
+
+        $(".feed-container").slick({
+          dots: false,
+          arrows: true,
+          infinite: true,
+          speed: 400,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          responsive: [
+            { breakpoint: 1200, settings: { slidesToShow: 3 } },
+            { breakpoint: 900, settings: { slidesToShow: 2 } },
+            { breakpoint: 600, settings: { slidesToShow: 1 } },
+          ],
+        });
+        
+
+             $("section, .hero-slider").each(function (i, el) {
+          const elem = $(el);
+          elem.css({ opacity: 0, transform: "translateY(24px)" });
+          setTimeout(
+            function () {
+              elem.css({
+                transition: "opacity 0.7s ease, transform 0.7s ease",
+                opacity: 1,
+                transform: "translateY(0)",
+              });
+            },
+            120 + i * 80,
+          );
+        });
+      });
+       function toggleDrawer() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+    </script>
+  </body>
+</html>
